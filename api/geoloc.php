@@ -31,15 +31,19 @@ function get_ip_visiteur() {
 
 $ip = get_ip_visiteur();
 
+// En local, aucune IP publique exploitable n'est disponible pour la géolocalisation.
 if ($ip === '127.0.0.1' || $ip === '::1' || $ip === '0.0.0.0') {
-    $ip = '193.54.115.235';
+    echo json_encode([
+        'erreur' => 'Géolocalisation indisponible en environnement local.'
+    ]);
+    exit;
 }
 
 $url_ipinfo = 'https://ipinfo.io/' . urlencode($ip) . '/geo';
 $json_brut = file_get_contents($url_ipinfo);
 
 if ($json_brut === false) {
-    echo json_encode(['erreur' =>'Impossible de contacter ipinfo.io']);
+    echo json_encode(['erreur' => 'Impossible de contacter ipinfo.io']);
     exit;
 }
 
@@ -81,9 +85,9 @@ if (!empty($code_postal)) {
 
 echo json_encode([
     'ip' => $ip,
-    'ville'=> $ville,
+    'ville' => $ville,
     'region' => $region,
-    'pays'=> $pays,
-    'cp'=> $code_postal,
+    'pays' => $pays,
+    'cp' => $code_postal,
     'dept' => $code_dept,
 ]);
