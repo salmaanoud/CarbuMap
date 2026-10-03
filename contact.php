@@ -8,8 +8,8 @@ require_once 'includes/header.php';
   <section class="page-header">
     <div class="page-header-inner">
       <a href="/index.php" class="lien-retour">← Retour à l'accueil</a>
-      <h1>Contact & FAQ</h1>
-      <p>Questions fréquentes et présentation de l'équipe</p>
+      <h1>À propos & FAQ</h1>
+      <p>Questions fréquentes et présentation du projet</p>
     </div>
   </section>
 
@@ -18,46 +18,29 @@ require_once 'includes/header.php';
     <!-- equipe -->
     <section class="faq-section">
 
-      <h2 class="faq-section-titre">L'équipe</h2>
+      <h2 class="faq-section-titre">Le projet</h2>
       <p class="faq-section-desc">
-        CarbuMap est un projet fait en binôme dans le cadre de l'UE de développement web L2-I S4 à Cergy Paris Université.
+        CarbuMap est un projet réalisé en binôme dans le cadre de l'UE Développement Web de L2 Informatique à CY Cergy Paris Université.
       </p>
 
       <div class="equipe-grille">
+        <div class="equipe-card">
+          <div class="equipe-avatar">SA</div>
+          <div class="equipe-infos">
+            <h3 class="equipe-nom">Salma Anoud</h3>
+            <p class="equipe-role">Développement du projet</p>
+            <p class="equipe-desc">Participation à la conception et au développement de l'application web.</p>
+          </div>
+        </div>
 
         <div class="equipe-card">
           <div class="equipe-avatar">RM</div>
           <div class="equipe-infos">
             <h3 class="equipe-nom">Rayan Moulai</h3>
-            <p class="equipe-role">Back-end & APIs</p>
-            <p class="equipe-desc">
-              PHP côté serveur, appels aux APIs carburants et géolocalisation, gestion des fichiers CSV, réalisation map.
-            </p>
-            <div class="equipe-tags">
-              <span class="equipe-tag">PHP</span>
-              <span class="equipe-tag">APIs</span>
-              <span class="equipe-tag">CSV</span>
-              <span class="equipe-tag">JSON</span>
-            </div>
+            <p class="equipe-role">Développement du projet</p>
+            <p class="equipe-desc">Participation à la conception et au développement de l'application web.</p>
           </div>
         </div>
-
-        <div class="equipe-card">
-          <div class="equipe-avatar">SA</div>
-          <div class="equipe-infos">
-            <h3 class="equipe-nom">Salma Anoud</h3>
-            <p class="equipe-role">Front-end & Design</p>
-            <p class="equipe-desc">
-              Design du site, HTML/CSS, PHP côté serveur, thème jour/nuit.
-            </p>
-            <div class="equipe-tags">
-              <span class="equipe-tag">HTML5</span>
-              <span class="equipe-tag">CSS3</span>
-              <span class="equipe-tag">Design</span>
-            </div>
-          </div>
-        </div>
-
       </div>
 
       <div class="gestion-bloc">
@@ -74,169 +57,68 @@ require_once 'includes/header.php';
             <span class="gestion-icone">🗺️</span>
             <div>
               <strong>Données géographiques</strong>
-              <p>Régions, départements et communes viennent des fichiers CSV de l'INSEE sur data.gouv.fr.</p>
+              <p>Régions, départements et communes viennent de fichiers de données publiques.</p>
             </div>
           </div>
           <div class="gestion-item">
             <span class="gestion-icone">📊</span>
             <div>
               <strong>Statistiques</strong>
-              <p>Les villes cherchées sont enregistrées de façon anonyme dans un CSV pour la page stats.</p>
+              <p>Les villes recherchées sont enregistrées de façon anonyme dans un CSV pour la page statistiques.</p>
             </div>
           </div>
           <div class="gestion-item">
             <span class="gestion-icone">🔒</span>
             <div>
               <strong>Confidentialité</strong>
-              <p>On ne stocke aucune donnée personnelle.</p>
+              <p>Aucune donnée personnelle n'est stockée par l'application.</p>
             </div>
           </div>
         </div>
       </div>
-
     </section>
 
     <!-- FAQ -->
     <section class="faq-section">
-
       <h2 class="faq-section-titre">Questions fréquentes</h2>
-      <p class="faq-section-desc">Les questions qu'on nous pose le plus souvent.</p>
+      <p class="faq-section-desc">Quelques informations sur le fonctionnement de CarbuMap.</p>
 
       <div class="faq-liste">
-
         <div class="faq-item">
           <h3 class="faq-question"><span class="faq-slash">///</span> D'où viennent les prix ?</h3>
-          <p class="faq-reponse">
-            De l'API officielle du gouvernement (data.economie.gouv.fr), les mêmes données que sur prix-carburants.gouv.fr.
-            Ce sont les stations elles-mêmes qui mettent à jour leurs prix.
-          </p>
+          <p class="faq-reponse">De l'API officielle du gouvernement sur data.economie.gouv.fr. Les données correspondent aux prix transmis par les stations.</p>
         </div>
 
         <div class="faq-item">
           <h3 class="faq-question"><span class="faq-slash">///</span> Les prix sont-ils fiables ?</h3>
-          <p class="faq-reponse">
-            Ce sont les dernières données transmises par les stations. Il peut y avoir un petit décalage
-            si une station n'a pas encore mis à jour son prix.
-          </p>
+          <p class="faq-reponse">Ce sont les dernières données disponibles transmises par les stations. Un décalage peut exister lorsqu'une station n'a pas encore actualisé ses prix.</p>
         </div>
 
         <div class="faq-item">
-          <h3 class="faq-question"><span class="faq-slash">///</span> Comment marche la géolocalisation ?</h3>
-          <p class="faq-reponse">
-            On utilise votre adresse IP via ipinfo.io pour estimer votre position.
-            C'est approximatif, pas besoin d'accès GPS.
-          </p>
+          <h3 class="faq-question"><span class="faq-slash">///</span> Comment fonctionne la géolocalisation ?</h3>
+          <p class="faq-reponse">L'application utilise l'adresse IP via ipinfo.io pour estimer une position. Cette estimation reste approximative et ne nécessite pas l'accès au GPS.</p>
         </div>
 
         <div class="faq-item">
           <h3 class="faq-question"><span class="faq-slash">///</span> Quels carburants sont affichés ?</h3>
-          <p class="faq-reponse">
-            SP95, SP98, Gazole, E10, E85 et GPLc. Toutes les stations ne proposent pas tous ces types.
-          </p>
+          <p class="faq-reponse">SP95, SP98, Gazole, E10, E85 et GPLc selon les carburants proposés par chaque station.</p>
         </div>
 
         <div class="faq-item">
           <h3 class="faq-question"><span class="faq-slash">///</span> Comment chercher une station ?</h3>
-          <p class="faq-reponse">
-            Cliquez sur votre région sur la carte, choisissez votre département, puis votre ville dans la liste.
-            Les stations s'affichent ensuite avec leurs prix.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3 class="faq-question"><span class="faq-slash">///</span> Pas de station dans ma ville ?</h3>
-          <p class="faq-reponse">
-            Si on ne trouve aucune station dans votre ville, on affiche toutes celles du département
-            avec leur ville indiquée pour que vous puissiez trouver la plus proche.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3 class="faq-question"><span class="faq-slash">///</span> C'est quoi les prix en vert et rouge ?</h3>
-          <p class="faq-reponse">
-            Sur la page Actualités, le vert veut dire que le prix est en dessous de la moyenne du département,
-            le rouge qu'il est au-dessus.
-          </p>
+          <p class="faq-reponse">Sélectionnez une région sur la carte, puis un département et une ville. Les stations disponibles et leurs prix sont ensuite affichés.</p>
         </div>
 
         <div class="faq-item">
           <h3 class="faq-question"><span class="faq-slash">///</span> Comment changer le thème ?</h3>
-          <p class="faq-reponse">
-            Cliquez sur le bouton 🌙 ou ☀️ en haut à droite.
-          </p>
+          <p class="faq-reponse">Le bouton 🌙 ou ☀️ en haut de la page permet de passer du thème clair au thème sombre.</p>
         </div>
 
         <div class="faq-item">
-          <h3 class="faq-question"><span class="faq-slash">///</span> C'est quoi les tendances ?</h3>
-          <p class="faq-reponse">
-            La page Actualités compare les prix actuels avec ceux de votre dernière visite.
-            ↑ hausse, ↓ baisse, → stable. Disponible à partir de la deuxième visite.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3 class="faq-question"><span class="faq-slash">///</span> Mes données sont collectées ?</h3>
-          <p class="faq-reponse">
-            Non. On enregistre seulement la ville cherchée et l'heure, de façon anonyme, pour les stats.
-            Pas de compte, pas de données personnelles.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3 class="faq-question"><span class="faq-slash">///</span> Combien de stations ?</h3>
-          <p class="faq-reponse">
-            Plus de 11 000 stations en France métropolitaine dans les 13 régions.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3 class="faq-question"><span class="faq-slash">///</span> C'est quoi le badge 24h/24 ?</h3>
-          <p class="faq-reponse">
-            La station a un automate en libre-service, on peut faire le plein même la nuit.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3 class="faq-question"><span class="faq-slash">///</span> C'est quoi la page technique ?</h3>
-          <p class="faq-reponse">
-            Une page qui montre les APIs utilisées : un film Ghibli aléatoire et votre position estimée par IP.
-          </p>
-        </div>
-
-        <div class="faq-item">
-          <h3 class="faq-question"><span class="faq-slash">///</span> C'est gratuit ?</h3>
-          <p class="faq-reponse">
-            Oui, totalement. C'est un projet universitaire fait par deux étudiants en L2 Informatique à Cergy.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- contact -->
-    <section class="faq-section">
-
-      <h2 class="faq-section-titre">Nous contacter</h2>
-      <p class="faq-section-desc">Un bug à signaler ou une question ? Écrivez-nous.</p>
-
-      <div class="contact-grille">
-        <div class="contact-card">
-          <span class="contact-icone">📧</span>
-          <h3>Rayan Moulai</h3>
-          <p>rayan.moulai@etu-cyu.fr</p>
-        </div>
-        <div class="contact-card">
-          <span class="contact-icone">📧</span>
-          <h3>Salma Anoud</h3>
-          <p>salma.anoud@etu-cyu.fr</p>
-        </div>
-        <div class="contact-card">
-          <span class="contact-icone">🏫</span>
-          <h3>Université</h3>
-          <p>Cergy Paris Université — L2 Informatique S4</p>
+          <h3 class="faq-question"><span class="faq-slash">///</span> À quoi sert la page technique ?</h3>
+          <p class="faq-reponse">Elle présente plusieurs exemples d'utilisation d'APIs et de formats de données intégrés au projet.</p>
         </div>
       </div>
-
     </section>
 
   </div>
